@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>tabela Imc</title>
+        <link rel = "shortcut icon" href = "src/img/logo_branca (2).png">
+        <link rel="stylesheet" href="src/css/style.css">
+        <link rel="stylesheet" href="src/css/reset.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    </head>
+
+    <body>
+        <header class="cabecalho">
+            <img src="src/img/logo_branca (2).png" alt="logotipo" class="logo">
+            <h1 class="tituloCabecalho">Teste Imc</h1>
+        </header>
+
+        <main class="principal">
+            <section class="form">
+                <h2 id="tituloForm" class="tituloPrincipal">Insira seus dados</h2>
+                <form id="formulario">
+                    <article class="conteudoForm">
+                        <div class="grupo">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" class="campoNome" placeholder="Digite seu nome aqui">
+                        </div>
+                        <div class="grupo">
+                            <label for="peso">Peso:</label>
+                            <input type="text" id="peso" name="peso" class="campoPeso" placeholder="Digite seu peso aqui">
+                        </div>
+                        <div class="grupo">
+                            <label for="altura">Altura:</label>
+                            <input type="text" id="altura" name="altura" class="campoAltura" placeholder="Digite sua altura aqui">
+                        </div>
+                    </article>
+                    <button id="adicionar-paciente" class="enviar">enviar</button>
+                </form>
+
+                <ul id="mensagemErro" class="campoErro"></ul>
+            </section>
+
+            <section class="tabelaPaciente">
+                <h2 class="tituloPrincipal">Seu Resultado</h2>
+                <div class="campoBusca">
+                    <label for="filtraPaciente"><span class="material-symbols-outlined">search</span></label>
+                    <input type="text" name="filtro" id="filtraPaciente" placeholder="buscar">
+                </div>
+                <table>
+                    <thead>
+						<tr>
+							<th>Nome</th>
+							<th>Peso(kg)</th>
+							<th>Altura(m)</th>
+							<th>IMC</th>
+						</tr>
+					</thead>
+
+                    <tbody id="pacientesRegistrados">
+                        <tr class="paciente">
+                            <td class="info-nome">matheus</td>
+                            <td class="info-peso">85</td>
+                            <td class="info-altura">1.75</td>
+                            <td class="info-imc">0</td>                    
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="import-error">
+                    <div class="btnImport">
+                        <button class="import" id="import-paciente">import</button>
+                    </div>
+                    <div class="msgImport">
+                        <span class="msgError invisivel" id="ajax-erro">Não foi possivel fazer o import de pacientes</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="rodape">
+            <img src="src/img/logo_branca (2).png" alt="logotipo" class="logo">
+            <p class="copyright">&copy; copyright teste imc - 2023</p>
+        </footer>
+
+        <script src="src/js/validaInfo.js"></script>
+        <script src="src/js/resgataInfo.js"></script>
+        <script src="src/js/apagaPaciente.js"></script>
+        <script src="src/js/buscaPaciente.js"></script>
+        <script src="src/js/importandoPaciente.js"></script>
+    </body>
+</html>
